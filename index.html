@@ -13,14 +13,22 @@
   <script type="text/javascript" src="js/underscore-min.js"></script>
   <script type="text/javascript" src="js/gooss.js"></script>
   <script type="text/javascript">
-    // TODO: Change this to the URL of your spreadsheet.
-    var url = "hhttps://docs.google.com/spreadsheets/d/1853kS2yhTIDcrjlgQkoe9YRhCma_B7ZiPmWHGGW2yH8/edit?usp=sharing";
 
     // DOMContentLoaded is not available IE < 9. Use a different load method
     // if you wish to target lower IE versions.
     document.addEventListener("DOMContentLoaded", function() {
       // TODO: Change "sheet_name" to the name you want to use
-      gooss.data({ sheet_name: {url: url, index: 0} }, function(err, data) {
+      gooss.data(
+        { 
+          day_one: {
+            url: "https://docs.google.com/spreadsheets/d/1853kS2yhTIDcrjlgQkoe9YRhCma_B7ZiPmWHGGW2yH8/edit#gid=0", 
+            index: 0
+          },
+          day_two: {
+            url: "https://docs.google.com/spreadsheets/d/1853kS2yhTIDcrjlgQkoe9YRhCma_B7ZiPmWHGGW2yH8/edit#gid=484486215", 
+            index: 0
+          }, 
+        }, function(err, data) {
         if (err) {
           document.getElementById("loading").innerHTML = "Error: " + err;
           return;
@@ -40,7 +48,7 @@
 
   <!-- TODO: Replace the contents of this script tag with your template -->
   <script type="text/html">
-    <p><%- sheet_name %></p>
+    <p><%- sheet %></p>
   </script>
 
   <div id="footer">
