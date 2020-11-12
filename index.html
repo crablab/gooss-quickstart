@@ -16,17 +16,18 @@
 
     // DOMContentLoaded is not available IE < 9. Use a different load method
     // if you wish to target lower IE versions.
+    url = "https://docs.google.com/spreadsheets/d/1853kS2yhTIDcrjlgQkoe9YRhCma_B7ZiPmWHGGW2yH8"
     document.addEventListener("DOMContentLoaded", function() {
       // TODO: Change "sheet_name" to the name you want to use
       gooss.data(
         { 
           day_one: {
-            url: "https://docs.google.com/spreadsheets/d/1853kS2yhTIDcrjlgQkoe9YRhCma_B7ZiPmWHGGW2yH8/edit#gid=0", 
+            url: url, 
             index: 0
           },
           day_two: {
-            url: "https://docs.google.com/spreadsheets/d/1853kS2yhTIDcrjlgQkoe9YRhCma_B7ZiPmWHGGW2yH8/edit#gid=484486215", 
-            index: 0
+            url: url, 
+            index: 1
           }, 
         }, function(err, data) {
         if (err) {
